@@ -138,15 +138,129 @@
 // console.log(isPrime(5));
 
 
-const jonas = ['Jonas', 'Schmedtmann', 2037 - 1991, 'teacher', ['Michael', 'Peter', 'Steven'], true];
+// const jonas = ['Jonas', 'Schmedtmann', 2037 - 1991, 'teacher', ['Michael', 'Peter', 'Steven'], true];
 
-const types = [];
+// const types = [];
 
-for (let i = 0; i < jonas.length; i++) {
-    //Reading from jonas array
-    console.log(jonas[i], typeof jonas[i])
-    // Filling types array
-    // types[i] = typeof jonas[i];
-    types.push(typeof jonas[i]);
-};
-console.log(types);
+// for (let i = 0; i < jonas.length; i++) {
+//     //Reading from jonas array
+//     console.log(jonas[i], typeof jonas[i])
+//     // Filling types array
+//     // types[i] = typeof jonas[i];
+//     types.push(typeof jonas[i]);
+// };
+// console.log(types);
+
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+// for (let i = 0; i < years.length; i++) {
+//     ages.push(2037 - years[i]);
+// }
+// console.log(ages);
+
+// //continue and break
+// console.log('--Only Strings--')
+
+// for (let i = 0; i < jonas.length; i++) {
+//     if (typeof jonas[i] !== 'string') continue;
+
+//     console.log(jonas[i], typeof jonas[i])
+// }
+
+
+// console.log('---Break with number---')
+
+// for (let i = 0; i < jonas.length; i++) {
+//     if (typeof jonas[i] === 'number') break;
+
+//     console.log(jonas[i], typeof jonas[i])
+// }
+
+//Looping Backwards and Loops in Loops
+
+// const jonas = ['Jonas', 'Schmedtmann', 2037 - 1991, 'teacher', ['Michael', 'Peter', 'Steven'], true];
+
+// //0, 1, ....4
+// //4, 3,....0
+
+// for (i = jonas.length - 1; i >= 0; i--) {
+//     console.log(i, jonas[i]);
+// }
+
+// for (let exercise = 1; exercise < 4; exercise++) {
+//     console.log(`--- Starting exercise----${exercise}`);
+//     for (let rep = 1; rep < 6; rep++) {
+//         console.log(`Exercise ${exercise}:--- Lifting weights----${rep}`);
+//     }
+// }
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep}`);
+// }
+
+//While loop
+// let rep = 1;
+// while (rep <= 10) {
+//     console.log(`WHILE: Lifting weights repetition ${rep}`)
+//     rep++
+// };
+
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// if (dice === 6) { console.log('You just hit 6 ') }
+// else {
+
+//     while (dice !== 6) {
+//         console.log(`You rolled a ${dice}`);
+//         dice = Math.trunc(Math.random() * 6) + 1;
+//         if (dice === 6) console.log('Loop is about to end...')
+//     }
+// };
+
+
+// let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// let tips = [];
+// let totals = [];
+
+
+// let calcTip = function (a) {
+//     if (a >= 50 && a <= 300) { return a * 0.15 }
+//     else { return a * 0.2 }
+
+// }
+// //  console.log(calcTip(90));
+
+// for (i = 0; i < bills.length; i++) {
+//     //     console.log(calcTip(bills[i]))
+//     tips.push(calcTip(bills[i]))
+//     //     console.log(tips);
+// };
+
+// totals = [...bills].map((e, i) => e + tips[i]);
+// console.log(bills, tips, totals);
+
+// const calcTip = function (bill) {
+//     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// }
+
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// const tips = [];
+// const totals = [];
+
+// for (let i = 0; i < bills.length; i++) {
+//     const tip = calcTip(bills[i]);
+//     tips.push(tip);
+//     totals.push(tip + bills[i]);
+// }
+// console.log(bills, tips, totals)
+
+
+const calcAvarage = function (arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        // sum = sum + arr[i]
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+console.log(calcAvarage([2, 3, 7]));
