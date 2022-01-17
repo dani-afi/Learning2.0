@@ -1,20 +1,20 @@
-// 'use strict';
+'use strict';
 
-// const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-// const openingHours = {
-//   [weekdays[3]]: {
-//     open: 12,
-//     close: 22,
-//   },
-//   [weekdays[4]]: {
-//     open: 11,
-//     close: 23,
-//   },
-//   [weekdays[5]]: {
-//     open: 0, // Open 24 hours
-//     close: 24,
-//   },
-// };
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
 
 // const restaurant = {
 //   name: 'Classico Italiano',
@@ -75,7 +75,7 @@
 // ///////////////////////////////////////
 // // Coding Challenge #4
 
-// /* 
+// /*
 // Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
 
 // The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
@@ -83,7 +83,7 @@
 // THIS TEST DATA (pasted to textarea)
 // underscore_case
 //  first_name
-// Some_Variable 
+// Some_Variable
 //   calculate_AGE
 // delayed_departure
 
@@ -177,7 +177,6 @@
 // planesInLine(3);
 // planesInLine(12);
 
-
 // ///////////////////////////////////////
 // // Working With Strings - Part 2
 
@@ -240,7 +239,6 @@
 // checkBaggage('Socks and camera');
 // checkBaggage('Got some snacks and a gun for protection');
 
-
 // ///////////////////////////////////////
 // // Working With Strings - Part 1
 // const airline = 'TAP Air Portugal';
@@ -287,7 +285,7 @@
 // ///////////////////////////////////////
 // // Coding Challenge #3
 
-// /* 
+// /*
 // Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
 
 // 1. Create an array 'events' of the different game events that happened (no duplicates)
@@ -374,7 +372,6 @@
 // console.log([...question.keys()]);
 // console.log([...question.values()]);
 
-
 // ///////////////////////////////////////
 // // Maps: Fundamentals
 // const rest = new Map();
@@ -407,7 +404,6 @@
 // console.log(rest.size);
 
 // console.log(rest.get(arr));
-
 
 // ///////////////////////////////////////
 // // Sets
@@ -449,7 +445,7 @@
 // ///////////////////////////////////////
 // // Coding Challenge #2
 
-// /* 
+// /*
 // Let's continue with our football betting app!
 
 // 1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
@@ -511,35 +507,38 @@
 //   },
 // };
 
-// /*
-// // 1.
+// // /*
+// // // 1.
 // for (const [i, player] of game.scored.entries())
 //   console.log(`Goal ${i + 1}: ${player}`);
 
-// // 2.
+// // // 2.
 // const odds = Object.values(game.odds);
 // let average = 0;
 // for (const odd of odds) average += odd;
+
 // average /= odds.length;
 // console.log(average);
 
-// // 3.
+// // // 3.
 // for (const [team, odd] of Object.entries(game.odds)) {
 //   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
-//   console.log(`Odd of ${teamStr} ${odd}`);
+
+//   console.log(`Odd of ${teamStr} are  ${odd}`);
 // }
 
-// // Odd of victory Bayern Munich: 1.33
-// // Odd of draw: 3.25
-// // Odd of victory Borrussia Dortmund: 6.5
+// // // Odd of victory Bayern Munich: 1.33
+// // // Odd of draw: 3.25
+// // // Odd of victory Borrussia Dortmund: 6.5
 
-// // BONUS
-// // So the solution is to loop over the array, and add the array elements as object properties, and then increase the count as we encounter a new occurence of a certain element
+// // // BONUS
+// // // So the solution is to loop over the array, and add the array elements as object properties, and then increase the count as we encounter a new occurence of a certain element
 // const scorers = {};
 // for (const player of game.scored) {
 //   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 // }
-// */
+// console.log(scorers);
+// // */
 
 // /*
 // ///////////////////////////////////////
@@ -567,7 +566,6 @@
 // for (const [day, { open, close }] of entries) {
 //   console.log(`On ${day} we open at ${open} and close at ${close}`);
 // }
-
 
 // ///////////////////////////////////////
 // // Optional Chaining
@@ -601,7 +599,6 @@
 // if (users.length > 0) console.log(users[0].name);
 // else console.log('user array empty');
 
-
 // ///////////////////////////////////////
 // // The for-of Loop
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
@@ -618,7 +615,7 @@
 // ///////////////////////////////////////
 // // Coding Challenge #1
 
-// /* 
+// /*
 // We're building a football betting app (soccer for my American friends 😅)!
 
 // Suppose we get data from a web service about a certain game (below). In this challenge we're gonna work with the data. So here are your tasks:
@@ -672,7 +669,6 @@
 // team1 < team2 && console.log('Team 1 is more likely to win');
 // team1 > team2 && console.log('Team 2 is more likely to win');
 
-
 // ///////////////////////////////////////
 // // The Nullish Coalescing Operator
 // restaurant.numGuests = 0;
@@ -715,7 +711,6 @@
 
 // restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
-
 // ///////////////////////////////////////
 // // Rest Pattern and Parameters
 // // 1) Destructuring
@@ -753,7 +748,6 @@
 
 // restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 // restaurant.orderPizza('mushrooms');
-
 
 // ///////////////////////////////////////
 // // The Spread Operator (...)
@@ -805,7 +799,6 @@
 // console.log(restaurantCopy.name);
 // console.log(restaurant.name);
 
-
 // ///////////////////////////////////////
 // // Destructuring Objects
 // restaurant.orderDelivery({
@@ -847,7 +840,6 @@
 // } = openingHours;
 // console.log(o, c);
 
-
 // ///////////////////////////////////////
 // // Destructuring Arrays
 // const arr = [2, 3, 4];
@@ -885,3 +877,120 @@
 // const [p = 1, q = 1, r = 1] = [8, 9];
 // console.log(p, q, r);
 // */
+
+// const question = new Map([
+//   ['question', 'Whar is the best programming language in the world?'],
+//   [1, 'C'],
+//   [2, 'Java'],
+//   [3, 'JavaScript'],
+//   ['correct', 3],
+//   [true, 'Correct'],
+//   [false, 'Try again!'],
+// ]);
+
+// console.log(question);
+
+// //Covesrt object to map
+
+// console.log(Object.entries(openingHours));
+// const hoursMap = new Map(Object.entries(openingHours));
+
+// console.log(hoursMap);
+// //Quizz app
+// console.log(question.get('question'));
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+// }
+
+// const answer = Number(prompt('Your answer'));
+// console.log(answer);
+
+// console.log(question.get(question.get('correct') === answer));
+
+// //Convert map to array
+// console.log([...question]);
+// // console.log(question.entries());
+// console.log([...question.keys()]);
+// console.log([...question.values()]);
+
+// // const gameEvents = new Map([
+// //   [17, '⚽ GOAL'],
+// //   [36, '🔁 Substitution'],
+// //   [47, '⚽ GOAL'],
+// //   [61, '🔁 Substitution'],
+// //   [64, '🔶 Yellow card'],
+// //   [69, '🔴 Red card'],
+// //   [70, '🔁 Substitution'],
+// //   [72, '🔁 Substitution'],
+// //   [76, '⚽ GOAL'],
+// //   [80, '⚽ GOAL'],
+// //   [92, '🔶 Yellow card'],
+// ]);
+// const events = new Set(gameEvents);
+
+// console.log(events);
+// const events = new Set();
+// console.log(events);
+// // 1.
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
+
+// // // 2.
+// gameEvents.delete(64);
+
+// // // 3.
+// console.log(
+//   `An event happened, on average, every ${90 / gameEvents.size} minutes`
+// );
+// const time = [...gameEvents.keys()].pop();
+// console.log(time);
+
+// console.log(
+//   `An event happened, on average, every ${time / gameEvents.size} minutes`
+// );
+
+// // 4.
+// for (const [min, event] of gameEvents) {
+//   const half = min <= 45 ? 'FIRST' : 'SECOND';
+//   console.log(`[${half} HALF] ${min}: ${event}`);
+// }
+
+// for (const [a, b] of gameEvents) {
+//   const c = a <= 45 ? 'PRIMA repriza' : 'A DOUA repriza';
+//   console.log(`[${c}] min ${a}: ${b}`);
+// }
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('portugal'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+console.log(airline.slice(-2));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  s === 'B' || s === 'E'
+    ? console.log('You got the middle seat')
+    : console.log('you are lucky');
+};
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
