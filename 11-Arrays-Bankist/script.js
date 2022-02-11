@@ -77,6 +77,20 @@ const displayMovements = function (movements) {
   });
 };
 displayMovements(account1.movements);
+const user = 'Steven Thomas Williams'; //stw
+
+const createUsername = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+
+createUsername(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -262,3 +276,106 @@ const movementsDescription = movements.map(
 );
 
 console.log(movementsDescription);
+
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(movements);
+console.log(deposits);
+
+// const depositsFor = [];
+// for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+// console.log(depositsFor);
+
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
+
+// accumulator = snowbal
+const balance = movements.reduce(function (acc, cur, i, arr) {
+  console.log(`Iteration ${i}:${acc}`);
+  return acc + cur;
+}, 0);
+
+console.log(balance);
+
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
+
+const balance3 = movements.reduce((acc, cur) => acc + cur, 0);
+
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+calcDisplayBalance(account1.movements);
+
+//Maximum value
+const max = movements.reduce((acc, mov) => {
+  return acc > mov ? acc : mov;
+}, movements[0]);
+
+console.log(max);
+
+// const max = movements.reduce((acc, mov) => {
+//   if (acc > mov) return acc;
+//   else return mov;
+// }, movements[0]);
+// console.log(max);
+
+const testData1 = [5, 2, 4, 1, 15, 8, 3];
+const testData2 = [16, 6, 10, 5, 6, 1, 4];
+
+// const movementsDescription = movements.map((mov, i, arr) => {
+//   if (mov > 0) {
+//     return `Movement ${i + 1}: You deposited ${mov}`;
+//   } else {
+//     return `Movement ${i + 1}: You withdrew ${Math.abs(mov)}`;
+//   }
+// });
+// console.log(movementsDescription);
+
+//Challenge
+// const dogAge = function (dogs) {
+//   const a = dogs.map((curr, i) => {
+//     if (curr <= 2) {
+//       return curr * 2;
+//     } else {
+//       return 16 + curr * 4;
+//     }
+//   });
+//   return a;
+// };
+
+// console.log(dogAge(testData1), dogAge(testData2));
+// const together = testData1.concat(testData2);
+// const dogGreaterThan18 = dogAge(together).filter(mov => mov > 18);
+// console.log(dogGreaterThan18);
+
+// const avarage = dogGreaterThan18.reduce(function (acc, curr) {
+//   // return (acc += curr) / dogGreaterThan18.length;
+//   return (acc += curr / dogGreaterThan18.length);
+// }, 0);
+
+// console.log(avarage);
+
+const calcAvarageHumanAge = function (ages) {
+  const humanAges = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
+
+  const adults = humanAges.filter(age => age >= 18);
+  console.log(humanAges, adults);
+
+  // const avarage = adults.reduce((acc, age) => acc + age, 0) / adults.length;
+
+  const avarage = adults.reduce(
+    (acc, age, i, arr) => acc + age / arr.length,
+    0
+  );
+
+  return avarage;
+};
+const avg1 = calcAvarageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+
+const avg2 = calcAvarageHumanAge([16, 6, 10, 5, 6, 1, 4]);
+
+console.log(avg1, avg2);
