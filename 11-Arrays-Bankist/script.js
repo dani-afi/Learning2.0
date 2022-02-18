@@ -631,3 +631,89 @@ labelBalance.addEventListener('click', function () {
   console.log(movementsUi);
   const movementsUi2 = [...document.querySelectorAll('.movements__value')];
 });
+//Practice with array methonds
+//Ex nr 1
+const bankDepositSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum, cur) => sum + cur, 0);
+console.log(bankDepositSum);
+
+//Ex nr 2
+// const numDeposits1000 = accounts
+//   .flatMap(acc => acc.movements)
+//   .filter(mov => mov >= 1000).length;
+// console.log(numDeposits1000);
+
+const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, cur) => (cur >= 1000 ? ++count : count), 0);
+// console.log(accounts.flatMap(acc => acc.movements).filter(mov => mov >= 1000));
+console.log(numDeposits1000);
+
+//Ex nr 3
+// const { deposits, withdrawals } = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce(
+//     (sums, cur) => {
+//       // cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+//       sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur;
+//       return sums;
+//     },
+//     { deposits: 0, withdrawals: 0 }
+//   );
+// console.log(deposits, withdrawals);
+
+//Ex mr 4
+//this is a nice title ->This Is a Nice Title
+const convertTitleCase = function (title) {
+  const capitalize = str => str[0].toUpperCase() + str.slice(1);
+  const exceptions = ['a', 'an', 'the', 'but', 'or', 'on', 'in', 'with', 'and'];
+
+  const titleCase = title
+    .toLowerCase()
+    .split(' ')
+    .map(word => (exceptions.includes(word) ? word : capitalize(word)))
+    .join(' ');
+  return capitalize(titleCase);
+};
+console.log(convertTitleCase('this is a nice title'));
+console.log(convertTitleCase('this is a LONG title but not too long'));
+console.log(convertTitleCase('and here is another title with an EXAMPLE'));
+
+//Coding challenge
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+// let ownersEatTooMuch = [];
+// let ownersEatTooLittle = [];
+// dogs.forEach(function (mov, i) {
+//   mov.recommendedFood = Math.floor(Number(`${mov.weight ** 0.75 * 28} `));
+
+//   mov.owners.includes('Sarah')
+//     ? mov.recommendedFood < mov.curFood
+//       ? console.log(`${mov.owners[0]}'s dog food is too little`)
+//       : console.log(`${mov.owners[0]}'s dog food is too much`)
+//     : null;
+//   if (mov.recommendedFood < mov.curFood) {
+//     ownersEatTooLittle.push(mov.owners);
+//   } else {
+//     ownersEatTooMuch.push(mov.owners);
+//   }
+// });
+// console.log(dogs);
+// console.log(ownersEatTooLittle);
+// console.log(ownersEatTooMuch);
+
+dogs.forEach(dog => (dog.recFood = Math.trunc(dog.weight ** 0.75 * 28)));
+
+console.log(dogs);
+
+const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
+console.log(dogSarah);
+
+console.log(`Sarah's dog is eating ${dogSarah.curFood}`);
