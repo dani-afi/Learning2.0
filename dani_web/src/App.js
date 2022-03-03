@@ -1,9 +1,29 @@
 import React from "react";
-import { Article, Brand, Cta, Feature, Navbar } from "./components";
+import {
+  Footer,
+  Blog,
+  Possibility,
+  Feature,
+  Whatdani,
+  Header,
+  Features,
+} from "./containers";
+import { CTA, Brand, Navbar } from "./components";
+import "./App.css";
 const App = () => {
   return (
-    <div>
-      <h1>Dani_Web</h1>
+    <div className="App">
+      <div className="gradient__bg">
+        <Navbar />
+        <Header />
+      </div>
+      <Brand />
+      <Whatdani />
+      <Features />
+      <Possibility />
+      <CTA />
+      <Blog />
+      <Footer />
     </div>
   );
 };

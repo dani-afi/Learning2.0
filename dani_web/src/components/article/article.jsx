@@ -1,5 +1,8 @@
 import React from "react";
 import "./article.css";
-export const article = () => {
+
+const Article = () => {
   return <div>Article</div>;
 };
+
+export default Article;
