@@ -1,3 +1,0 @@
-npx create-react-app ./ (./ pt a instala aplicati in folderul pe care l-am deschis cu vs code)
-npm install react-icons
-npm start (to run the aplication)
