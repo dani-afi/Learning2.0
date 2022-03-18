@@ -1,9 +1,12 @@
 .app__navbar {
+  position: sticky;
+  top: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: var(--color-black);
+  z-index: 3;
 
   padding: 1rem 2rem;
 }

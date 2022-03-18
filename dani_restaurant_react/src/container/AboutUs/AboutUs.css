@@ -70,4 +70,7 @@
     width: 80%;
     height: 320px;
   }
+  .app__aboutus-content_knife img {
+    height: 400px;
+  }
 }
