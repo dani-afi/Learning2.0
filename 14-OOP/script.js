@@ -275,6 +275,4 @@ const tesla = new EV('Tesla', 120, 23);
 tesla.chargeBattery(90);
 console.log(tesla);
 tesla.brake();
-// sddscsd
-// sdcsdc
-// sdcds
+testla1.brake();
